@@ -1,41 +1,34 @@
-// 'use strict';
-
-// // let id = Symbol("id");
-
-// const obj = {
-//     'name': 'Test',
-//     [Symbol("id")]: 1,
-//     getId: function () {
-//         return this[id];
-//     }
-// };
-
-// // let id = Symbol();
-// // let id2 = Symbol();
-
-// // console.log(id == id2);
-
-// // obj[id] = 1;
-
-
-
-// // console.log(obj[id]);
-// // console.log(obj.getId());
-// console.log(obj[Object.getOwnPropertySymbols(obj)[0]]);
-
-// for (let value in obj) console.log(value);
-
 'use strict';
 
-const myAwesomeDB = {
-    movies: [],
-    actors: [],
-    [Symbol.for("id")]: 123
-};
+const arr = [1, 1, 2, 'Oleg', 'Masha', 2, 4, 5, 6, 5];
 
-//Сторонний код библиотеки
+function unique(arr) {
+    return Array.from(new Set(arr));
+}
 
-myAwesomeDB.id = '32323232';
+console.log(unique(arr))
 
-console.log(myAwesomeDB[Symbol.for("id")]);
-console.log(myAwesomeDB);
+const set = new Set(arr);
+
+set.add('Ivan')
+    .add('Oleg');
+
+// console.log(set);
+
+// set.delete(value);
+// set.has(value);
+// set.clear();
+// set.size;
+
+// for (let value of set) console.log(value);
+
+// set.forEach((value, valueAgaing) => {
+//     console.log(value, valueAgaing);
+// });
+
+// console.log(set.values());
+
+// console.log(set.keys());
+
+// console.log(set.entries());
+
